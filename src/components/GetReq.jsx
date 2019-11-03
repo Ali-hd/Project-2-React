@@ -1,30 +1,43 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import Images from './Images'
+
 
 export default class GetReq extends Component {
+
     state = {
-        posts: []
+        output: [],
+        error: ""
     }
 
-  componentDidMount() {
-        axios.get("https://api-v3.igdb.com/games", {
-            headers: {
-                "user-key": "f588d20a4d1313e44d89fded0f7b08ea",
-                Accept: "application/json"
-            }
+        componentDidMount(){
+            this.lunch()
+        }
+
+    lunch = () => {
+        axios.get("https://www.themealdb.com/api/json/v1/1/search.php?s=fish")
+        .then(response => {
+            console.log(response);
+            this.setState({output : response.data.meals})
+            console.log(this.state.output)
+
         })
-            .then(response => {
-                console.log(response);
-            })
-            .catch(error => {
-                console.log(error)
-            });  
+        .catch(error => {
+            console.log(error)
+
+        })
+
     }
-    render() {
-        return (
-            <div>
-                List of posts
-            </div>
-        )
-    }
+    
+render() {
+    return (
+        <div>
+            Image of food
+            {this.state.output.map(hit =>{
+               return <Images food={hit} /> 
+            })}
+                
+        </div>
+    )
+}
 }

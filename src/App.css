@@ -24,3 +24,15 @@
 body{
   background-color: rgb(197, 169, 45);
 }
+
+
+.container{
+  background-size: 70vh;
+  background-color: aqua;
+}
+
+img{
+  margin: 30vh 16%;
+  width: 800px;
+  height: 500px;
+}

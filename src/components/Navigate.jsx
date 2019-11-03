@@ -30,6 +30,9 @@ const Navigate = (props) => {
                 <Button variant="outline-dark">Dark</Button>
             </ButtonToolbar>
 
+           
+            
+
         </div>
     )
 }

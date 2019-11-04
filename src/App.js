@@ -48,7 +48,7 @@ export default class App extends Component {
       {this.state.output !== null && <div>
         {this.state.output.map(hit =>{
                return <Images food={hit} key={hit.idMeal}/> 
-            })} }
+            })} 
         </div>
       }
       {this.state.output == null && <h4> Please enter a correct search</h4>}

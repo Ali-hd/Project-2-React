@@ -27,7 +27,7 @@ componentDidMount(){
         const recipe = this.state.rand
         return (
             <div>
-                <button><Link to={{ pathname: `/`}}>Home Page</Link></button>
+                <button><Link to={{ pathname: `/home`}}>Home Page</Link></button>
                 <h3>{recipe.strMeal}</h3>
                 <img src={recipe.strMealThumb}/>
                 <h5>Ingredients:-</h5>

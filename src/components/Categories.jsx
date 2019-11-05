@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Navigate from './Navigate'
 import axios from 'axios'
 import CatValue from './CatValue'
 import {Link} from 'react-router-dom'
@@ -33,14 +32,14 @@ export default class Categories extends Component {
     render() {
 
         return (
-            <div>
+            <div style={{marginTop: '70px'}}>
                 <div>
-                    <button><Link to={{ pathname: `/home`}}>Home Page</Link></button>
                     <h1>{this.props.location.state.recipe}: </h1>
                     {this.state.output2 !== null && <p>{this.state.output2.data.categories[this.props.location.state.id].strCategoryDescription}</p>}
                     { this.state.output !== null && this.state.output.data.meals.map((value)=>{
                        return <CatValue food={value} />
                     })}
+                    
                 </div>
             </div>
         )

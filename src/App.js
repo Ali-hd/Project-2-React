@@ -3,7 +3,8 @@ import './App.css'
 import Input from './components/Input'
 import axios from 'axios'
 import Images from './components/Images'
-
+import {Jumbotron, Container} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 
 export default class App extends Component {
 
@@ -43,12 +44,30 @@ export default class App extends Component {
   render() {
 
     return (
-      <div>
+      <div style={{marginTop: '31px'}}>\
+      <article className="main-intro">
+        <Jumbotron fluid name="torp">
+          <Container>
+            <h1>Fluid jumbotron</h1>
+            <p>
+              This is a modified jumbotron that occupies the entire horizontal space of
+              its parent.
+            </p>
+            
+          </Container>
+        </Jumbotron>
+
+        
+      </article>
       <Input FindRecipe = {this.FindRecipe} />
       {this.state.output !== null && <div>
-        {this.state.output.map(hit =>{
+        <div className="row">
+          {this.state.output.map(hit =>{
                return <Images food={hit} key={hit.idMeal}/> 
-            })} 
+            })}
+          
+        </div>
+        <button><a href="#top">Back to Top</a></button>
         </div>
       }
       {this.state.output == null && <h4> Please enter a correct search</h4>}

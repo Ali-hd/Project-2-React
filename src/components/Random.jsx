@@ -26,8 +26,8 @@ componentDidMount(){
         const maap = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
         const recipe = this.state.rand
         return (
-            <div>
-                <button><Link to={{ pathname: `/home`}}>Home Page</Link></button>
+            <div style={{marginTop: '70px'}}>
+                
                 <h3>{recipe.strMeal}</h3>
                 <img src={recipe.strMealThumb}/>
                 <h5>Ingredients:-</h5>

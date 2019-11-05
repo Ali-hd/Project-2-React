@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import CatValue from './CatValue'
-import {Link} from 'react-router-dom'
 
 export default class Categories extends Component {
 
@@ -34,11 +33,14 @@ export default class Categories extends Component {
         return (
             <div style={{marginTop: '70px'}}>
                 <div>
-                    <h1>{this.props.location.state.recipe}: </h1>
-                    {this.state.output2 !== null && <p>{this.state.output2.data.categories[this.props.location.state.id].strCategoryDescription}</p>}
+                    <h1 style={{textAlign: 'center'}}>{this.props.location.state.recipe}</h1>
+                    <hr style={{width : '80%'}}/>
+                    {this.state.output2 !== null && <p style={{width: '80%', margin: '0 auto', textAlign: 'justify'}}>{this.state.output2.data.categories[this.props.location.state.id].strCategoryDescription}</p>}
+                    <div>
                     { this.state.output !== null && this.state.output.data.meals.map((value)=>{
                        return <CatValue food={value} />
                     })}
+                    </div>
                     
                 </div>
             </div>

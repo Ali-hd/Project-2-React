@@ -8,7 +8,7 @@ import "../App.css"
 const Images = (props) => {
     
     return (
-        <div className="col-md-6 col-sm-2 mb-2">
+        <div className="col-md-6 col-sm-12 mb-2">
             
             <img src={props.food.strMealThumb}/>
             <h3 className="images-info">{props.food.strMeal}</h3>

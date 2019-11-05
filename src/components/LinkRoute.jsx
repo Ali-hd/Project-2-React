@@ -37,11 +37,11 @@ export default class LinkRoute extends Component {
             {this.state.output == null && <div>
                 <Card>
                     <Card.Title>
-                         <h3>{recipe.strMeal} ID: {recipe.idMeal}</h3>
+                         <h3>{recipe.strMeal}</h3>
                     </Card.Title>
                     <Row>
                         <Col className="cardrow"><img src={recipe.strMealThumb}/></Col>
-                        <Col className="cardrow"><p><span style={{fontWeight: 'bold'}}>Recipe Instructions: </span><br/>{recipe.strInstructions}</p></Col>
+                        <Col className="cardrow"><p style={{textAlign: 'justify'}}><span style={{fontWeight: 'bold'}}>Recipe Instructions: </span><br/>{recipe.strInstructions}</p></Col>
                     </Row>
                     <Row style={{margin: '0 auto'}}>
                     <h5>Ingredients:-</h5>
@@ -56,14 +56,17 @@ export default class LinkRoute extends Component {
                     <Row><a target="_blank" href={recipe.strYoutube}>Watch on youtube</a></Row>
                 </Card>
             </div>}
+
+      {/* ************************************************************************************** */}
+
             {this.state.output !== null && <div>           
             <Card>
                     <Card.Title>
-                         <h3>{this.state.output.strMeal} ID: {this.state.output.idMeal}</h3>
+                         <h3>{this.state.output.strMeal}</h3>
                     </Card.Title>
                     <Row>
                         <Col><img src={this.state.output.strMealThumb}/></Col>
-                        <Col><p><span style={{fontWeight: 'bold'}}>Recipe Instructions: </span><br/>{this.state.output.strInstructions}</p></Col>
+                        <Col><p style={{textAlign: 'justify', marginRight: '40px'}}><span style={{fontWeight: 'bold'}}>Recipe Instructions: </span><br/>{this.state.output.strInstructions}</p></Col>
                     </Row>
                     <Row style={{margin: '0 auto'}}>
                     <h5>Ingredients:-</h5>

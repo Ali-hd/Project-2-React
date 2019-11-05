@@ -4,7 +4,6 @@ import Input from './components/Input'
 import axios from 'axios'
 import Images from './components/Images'
 import {Jumbotron, Container} from 'react-bootstrap'
-import {Link} from 'react-router-dom'
 
 export default class App extends Component {
 
@@ -26,6 +25,13 @@ export default class App extends Component {
           console.log(this.state.error)
           
       })
+      setTimeout(function () {
+        window.scrollTo({
+          top: 500,
+          left: -15000,
+          behavior: 'smooth'
+        });
+      }, 1000);
     }
   componentDidMount = () => {
       const json = localStorage.getItem("recipe")
@@ -48,7 +54,11 @@ export default class App extends Component {
       <article className="main-intro">
         <Jumbotron fluid name="torp">
           <Container>
-            <h1>Fluid jumbotron</h1>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <h1>Explore your tastes</h1>
             <p>
               This is a modified jumbotron that occupies the entire horizontal space of
               its parent.
@@ -67,7 +77,7 @@ export default class App extends Component {
             })}
           
         </div>
-        <button><a href="#top">Back to Top</a></button>
+        <button style={{marginLeft: '44.5%', marginTop: '10%', backgroundColor: 'orange'}}><a href="#top">Back to Top</a></button>
         </div>
       }
       {this.state.output == null && <h4> Please enter a correct search</h4>}

@@ -34,8 +34,8 @@ export default class App extends Component {
       }, 1000);
     }
   componentDidMount = () => {
-      const json = localStorage.getItem("recipe")
-      const recipes = JSON.parse(json)
+      const history = localStorage.getItem("recipe")
+      const recipes = JSON.parse(history)
       this.setState({output: recipes})
     }
   
@@ -52,7 +52,7 @@ export default class App extends Component {
     return (
       <div style={{marginTop: '31px'}}>\
       <article className="main-intro">
-        <Jumbotron fluid name="torp">
+        <Jumbotron fluid>
           <Container>
             <br/>
             <br/>
@@ -60,8 +60,7 @@ export default class App extends Component {
             <br/>
             <h1>Explore your tastes</h1>
             <p>
-              This is a modified jumbotron that occupies the entire horizontal space of
-              its parent.
+              Enjoy many recipes from around the world and learn how to make them. 
             </p>
             
           </Container>
@@ -77,7 +76,7 @@ export default class App extends Component {
             })}
           
         </div>
-        <button style={{marginLeft: '44.5%', marginTop: '10%', backgroundColor: 'orange'}}><a href="#top">Back to Top</a></button>
+        <button style={{margin: '15% auto', display:'block',backgroundColor: 'orange', color: 'black'}}><a href="#top">Back to Top</a></button>
         </div>
       }
       {this.state.output == null && <h4> Please enter a correct search</h4>}

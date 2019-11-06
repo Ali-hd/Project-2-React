@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
 import {Col, Row, Card} from 'react-bootstrap'
 import axios from 'axios'
 
@@ -32,16 +31,17 @@ export default class LinkRoute extends Component {
 
         console.log(recipe)
         return (
-            <div style={{marginTop: '250px'}}> 
+            <div style={{marginTop: '170px'}}> 
 
             {this.state.output == null && <div>
                 <Card>
                     <Card.Title>
-                         <h3>{recipe.strMeal}</h3>
+                         <h3  style={{textAlign: 'center', marginTop: '30px'}}>{recipe.strMeal}</h3>
+                         <hr style={{width: '70%'}}/>
                     </Card.Title>
                     <Row>
-                        <Col className="cardrow"><img src={recipe.strMealThumb}/></Col>
-                        <Col className="cardrow"><p style={{textAlign: 'justify'}}><span style={{fontWeight: 'bold'}}>Recipe Instructions: </span><br/>{recipe.strInstructions}</p></Col>
+                        <Col><img style={{marginTop : '50px', marginBottom : '50px'}} src={recipe.strMealThumb}/></Col>
+                        <Col><p style={{textAlign: 'justify', marginRight: '40px', marginTop : '50px'}}><span style={{fontWeight: 'bold'}}>Recipe Instructions: </span><br/>{recipe.strInstructions}</p></Col>
                     </Row>
                     <Row style={{margin: '0 auto'}}>
                     <h5>Ingredients:-</h5>
@@ -53,7 +53,7 @@ export default class LinkRoute extends Component {
                             })}
                         </p>
                     </Row>
-                    <Row><a target="_blank" href={recipe.strYoutube}>Watch on youtube</a></Row>
+                    <Row><a style={{marginTop: '70px', marginLeft: '47%', fontWeight: 'bold'}} target="_blank" href={recipe.strYoutube}>Watch on youtube</a></Row>
                 </Card>
             </div>}
 
@@ -62,11 +62,12 @@ export default class LinkRoute extends Component {
             {this.state.output !== null && <div>           
             <Card>
                     <Card.Title>
-                         <h3>{this.state.output.strMeal}</h3>
+                         <h3 style={{textAlign: 'center', marginTop: '30px'}}>{this.state.output.strMeal}</h3>
+                         <hr style={{width: '70%'}}/>
                     </Card.Title>
                     <Row>
-                        <Col><img src={this.state.output.strMealThumb}/></Col>
-                        <Col><p style={{textAlign: 'justify', marginRight: '40px'}}><span style={{fontWeight: 'bold'}}>Recipe Instructions: </span><br/>{this.state.output.strInstructions}</p></Col>
+                        <Col><img style={{marginTop : '50px', marginBottom : '50px'}} src={this.state.output.strMealThumb}/></Col>
+                        <Col><p style={{textAlign: 'justify', marginRight: '40px', marginTop : '50px'}}><span style={{fontWeight: 'bold'}}>Recipe Instructions: </span><br/>{this.state.output.strInstructions}</p></Col>
                     </Row>
                     <Row style={{margin: '0 auto'}}>
                     <h5>Ingredients:-</h5>
@@ -78,7 +79,7 @@ export default class LinkRoute extends Component {
                             })}
                         </p>
                     </Row>
-                    <Row><a target="_blank" href={this.state.output.strYoutube}>Watch on youtube</a></Row>
+                    <Row><a style={{marginTop: '70px', marginLeft: '47%', fontWeight: 'bold'}} target="_blank" href={this.state.output.strYoutube}>Watch on youtube</a></Row>
                 </Card>
             </div>}
             </div>

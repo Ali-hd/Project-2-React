@@ -1,21 +1,19 @@
+import React from 'react'
 import { Link } from 'react-router-dom'
-import React, { Component } from 'react'
 
-export default class CatValue extends Component {
+const CatValue = (props) => {
+    return (
+        <div className="col-md-6 col-sm-12 mb-2">
 
-    render() {
-        return (
-            
-            <div className="cat-value">
-                
-                <img src={this.props.food.strMealThumb}/>
-                <h3 >{this.props.food.strMeal}</h3>
-                <button >
-                    <Link to={{ pathname: `/mealId/${this.props.food.idMeal}`, state: { recipe: this.props.food } }}>View More</Link>
-                </button>
-                
-            </div>
-            
-        )
-    }
+            <img style={{ marginLeft: 'auto', marginRight: 'auto', display: 'block' }} src={props.food.strMealThumb} />
+            <h3 style={{ textAlign: 'center' }} className="images-info">{props.food.strMeal}</h3>
+            <button style={{ marginLeft: 'auto', marginRight: 'auto', display: 'block' }} className="images-button" >
+                <Link to={{ pathname: `/mealId/${props.food.idMeal}`, state: { recipe: props.food } }}>View More</Link>
+            </button>
+
+        </div>
+
+    )
 }
+
+export default CatValue

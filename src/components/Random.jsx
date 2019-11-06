@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import {Col, Row, Card} from 'react-bootstrap'
 
 export default class Random extends Component {
     state={
@@ -25,21 +26,32 @@ componentDidMount(){
         const maap = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
         const recipe = this.state.rand
         return (
-            <div style={{marginTop: '70px'}}>
-                
-                <h3>{recipe.strMeal}</h3>
-                <img src={recipe.strMealThumb}/>
-                <h5>Ingredients:-</h5>
-                <p>
-                    {maap.map((elem, i) => {
-                        i = i + 1
-                        // {props.food[`strIngredient${i}`] === "" ? "" : props.food[`strIngredient${i}`]=== null ? "" : "niether"}
-                        return <span key={i}>{recipe[`strIngredient${i}`]}-</span>
-                    })}
-                </p>
-                <p>{recipe.strInstructions}</p>
-                <a target="_blank" href={recipe.strYoutube}>Watch on youtube</a>
-            </div>
+            <div style={{marginTop: '170px'}}> 
+
+            {this.state.output == null && <div>
+                <Card>
+                    <Card.Title>
+                         <h3  style={{textAlign: 'center', marginTop: '30px'}}>{recipe.strMeal}</h3>
+                         <hr style={{width: '70%'}}/>
+                    </Card.Title>
+                    <Row>
+                        <Col><img style={{marginTop : '50px', marginBottom : '50px'}} src={recipe.strMealThumb}/></Col>
+                        <Col><p style={{textAlign: 'justify', marginRight: '40px', marginTop : '50px'}}><span style={{fontWeight: 'bold'}}>Recipe Instructions: </span><br/>{recipe.strInstructions}</p></Col>
+                    </Row>
+                    <Row style={{margin: '0 auto'}}>
+                    <h5>Ingredients:-</h5>
+                        <p>
+                            {maap.map((elem, i) => {
+                                i = i + 1
+                                // {props.food[`strIngredient${i}`] === "" ? "" : props.food[`strIngredient${i}`]=== null ? "" : "niether"}
+                                return <span key={i}>{recipe[`strIngredient${i}`]}-</span>
+                            })}
+                        </p>
+                    </Row>
+                    <Row><a style={{marginTop: '70px', marginLeft: '47%', fontWeight: 'bold'}} target="_blank" href={recipe.strYoutube}>Watch on youtube</a></Row>
+                </Card>
+            </div>}
+        </div>
         )
     }
 }

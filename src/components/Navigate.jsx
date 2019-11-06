@@ -1,7 +1,7 @@
-import { Button, ButtonToolbar, Modal, Navbar, NavDropdown, FormControl, Form, Nav } from 'react-bootstrap';
+import {Navbar, NavDropdown, Nav } from 'react-bootstrap';
 import {Link} from 'react-router-dom'
 import React, { Component } from 'react'
-import { FaBeer, FaEnvira } from 'react-icons/fa';
+import { FaEnvira } from 'react-icons/fa';
 
 const categ = ["Beef", "Chicken", "Dessert", "Lamb", "Miscellaneous", "Pasta", "Seafood", "Side", "Starter", "Vegan", "Vegetarian", "Breakfast", "Goat"]
 export default class Navigate extends Component {

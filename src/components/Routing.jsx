@@ -6,6 +6,7 @@ import Random from './Random'
 import ErrorPath from './ErrorPath'
 import Navigate from './Navigate'
 import Categories from './Categories'
+import StartPage from './StartPage'
 
 function Routing() {
     return (
@@ -17,6 +18,7 @@ function Routing() {
                 <Route path='/mealId' component={LinkRoute}/>
                 <Route path='/RandomRecipe' component={Random}/>
                 <Route path='/categorie' component={Categories}/>
+                <Route path='/' exact component={StartPage}/>
 
 
                 <Route component={ErrorPath}/>

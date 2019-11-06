@@ -19,7 +19,7 @@ export default class Navigate extends Component {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
                         <Nav.Link href="/home">Home</Nav.Link>
-                        <Nav.Link href="#pricing">Watch Later</Nav.Link>
+                        <Nav.Link>Watch Later</Nav.Link>
                     
                         <NavDropdown title="Categories" id="collasible-nav-dropdown" name="Categorie">
                             <NavDropdown.Item><Link to={{ pathname: `/categorie/${categ[0]}`,state: {recipe: categ[0], id:0}}}>Beef</Link></NavDropdown.Item>
@@ -35,8 +35,6 @@ export default class Navigate extends Component {
                             <NavDropdown.Item><Link to={{ pathname: `/categorie/${categ[10]}`,state: {recipe: categ[10], id:11}}}>Vegetarian</Link></NavDropdown.Item>
                             <NavDropdown.Item><Link to={{ pathname: `/categorie/${categ[11]}`,state: {recipe: categ[11], id:12}}}>Breakfast</Link></NavDropdown.Item>
                             <NavDropdown.Item><Link to={{ pathname: `/categorie/${categ[12]}`,state: {recipe: categ[12], id:13}}}>Goat</Link></NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                         </NavDropdown>
                     
                     </Nav>

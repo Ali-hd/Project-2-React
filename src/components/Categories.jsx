@@ -36,7 +36,7 @@ export default class Categories extends Component {
           console.log(response)
         })
         .catch(error => {
-          //   console.log(this.state.error)
+          
         })
     }   
    

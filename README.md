@@ -8,7 +8,7 @@ A website that allows you to search for recipes. It shows you what ingredients y
 
 ## Website link - use it here!
 
-
+https://project2-sei-recipe-website.herokuapp.com/
 
 ### Technical Used
 

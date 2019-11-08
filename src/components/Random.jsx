@@ -48,7 +48,7 @@ componentDidMount(){
                             })}
                         </p>
                     </Row>
-                    <Row><a style={{marginTop: '70px', marginLeft: '47%', fontWeight: 'bold'}} target="_blank" href={recipe.strYoutube}>Watch on youtube</a></Row>
+                    <Row  style={{margin:'0 auto'}}><a style={{marginTop: '70px', fontWeight: 'bold'}} target="_blank" href={recipe.strYoutube}>Watch on youtube</a></Row>
                 </Card>
             </div>}
         </div>

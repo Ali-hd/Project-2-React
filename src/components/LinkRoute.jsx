@@ -34,22 +34,22 @@ export default class LinkRoute extends Component {
             <div style={{marginTop: '170px'}}> 
 
             {this.state.output == null && <div>
-                <Card>
+                <Card style={{width:'98%', margin:'0 auto'}}>
                     <Card.Title>
                          <h3  style={{textAlign: 'center', marginTop: '30px'}}>{recipe.strMeal}</h3>
                          <hr style={{width: '70%'}}/>
                     </Card.Title>
                     <Row>
-                        <Col><img style={{marginTop : '50px', marginBottom : '50px'}} src={recipe.strMealThumb}/></Col>
-                        <Col><p style={{textAlign: 'justify', marginRight: '40px', marginTop : '50px'}}><span style={{fontWeight: 'bold'}}>Recipe Instructions: </span><br/>{recipe.strInstructions}</p></Col>
+                        <Col lg={true} className="card-image"><img style={{marginTop : '50px', marginBottom : '50px'}} src={recipe.strMealThumb}/></Col>
+                        <Col lg={true}><p style={{textAlign: 'justify', marginRight: '3%',marginLeft:'1%', marginTop : '50px'}}><span style={{fontWeight: 'bold'}}>Recipe Instructions: </span><br/>{recipe.strInstructions}</p></Col>
                     </Row>
-                    <Row style={{margin: '0 auto'}}>
+                    <Row className='card-ingredients'>
                     <h5>Ingredients:-</h5>
                         <p>
                             {maap.map((elem, i) => {
                                 i = i + 1
                                 // {props.food[`strIngredient${i}`] === "" ? "" : props.food[`strIngredient${i}`]=== null ? "" : "niether"}
-                                return <span key={i}>{recipe[`strIngredient${i}`]}-</span>
+                                return <span key={i}>{recipe[`strIngredient${i}`]}{recipe[`strIngredient${i}`] !== "" && "-"}</span>
                             })}
                         </p>
                     </Row>
@@ -60,16 +60,16 @@ export default class LinkRoute extends Component {
       {/* ************************************************************************************** */}
 
             {this.state.output !== null && <div>           
-            <Card>
+            <Card style={{width:'98%', margin:'0 auto'}}>
                     <Card.Title>
                          <h3 style={{textAlign: 'center', marginTop: '30px'}}>{this.state.output.strMeal}</h3>
                          <hr style={{width: '70%'}}/>
                     </Card.Title>
                     <Row>
-                        <Col><img style={{marginTop : '50px', marginBottom : '50px'}} src={this.state.output.strMealThumb}/></Col>
-                        <Col><p style={{textAlign: 'justify', marginRight: '40px', marginTop : '50px'}}><span style={{fontWeight: 'bold'}}>Recipe Instructions: </span><br/>{this.state.output.strInstructions}</p></Col>
+                        <Col lg={true} className="card-image"><img style={{marginTop : '50px', marginBottom : '50px'}} src={this.state.output.strMealThumb}/></Col>
+                        <Col lg={true}><p style={{textAlign: 'justify', marginRight: '3%',marginLeft:'1%', marginTop : '50px'}}><span style={{fontWeight: 'bold'}}>Recipe Instructions: </span><br/>{this.state.output.strInstructions}</p></Col>
                     </Row>
-                    <Row style={{margin: '0 auto'}}>
+                    <Row className='card-ingredients'>
                     <h5>Ingredients:-</h5>
                         <p>
                             {maap.map((elem, i) => {

@@ -6,8 +6,8 @@ function Input(props) {
         <div>
             <form onSubmit={props.FindRecipe} className="input-field">
                     <br/>
-                    <FormControl type="text" name="searchResp" placeholder="Search for a recipe" className="mr-sm-2" />
-                    <Button type="submit" variant="outline-secondary" block style={{color: 'black', fontWeight: 'bold', width: '200px', margin: '10px auto'}}>Search Now!</Button>
+                    <FormControl type="text" name="searchResp" placeholder="Search for a recipe" style={{width:'100%'}}/>
+                    <Button type="submit" variant="outline-secondary" block style={{color: 'black', fontWeight: 'bold', width: '70%', margin: '10px auto'}}>Search Now!</Button>
             </form>
         </div>
     )

@@ -53,7 +53,7 @@ export default class App extends Component {
       <div style={{marginTop: '31px'}}>\
       <article className="main-intro">
         <Jumbotron fluid>
-          <Container>
+          <Container className="jumbotron-info">
             <br/>
             <br/>
             <br/>
